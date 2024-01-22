@@ -131,7 +131,7 @@ You may have cases where you want to call a function on a parameter during execu
 	functions := map[string]govaluate.ExpressionFunction {
 		"strlen": func(args ...interface{}) (interface{}, error) {
 			length := len(args[0].(string))
-			return (float64)(length), nil
+			return length, nil
 		},
 	}
 
@@ -179,7 +179,7 @@ What operators and types does this support?
 * Modifiers: `+` `-` `/` `*` `&` `|` `^` `**` `%` `>>` `<<`
 * Comparators: `>` `>=` `<` `<=` `==` `!=` `=~` `!~`
 * Logical ops: `||` `&&`
-* Numeric constants, as 64-bit floating point (`12345.678`)
+* Numeric constants, as json.Number
 * String constants (single quotes: `'foobar'`)
 * Date constants (single quotes, using any permutation of RFC3339, ISO8601, ruby date, or unix date; date parsing is automatically tried with any string constant)
 * Boolean constants: `true` `false`
